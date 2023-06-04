@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Search Hotels</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="location" placeholder="Enter a location" />
+        <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+
+    <script>
+        const form = document.querySelector("form");
+        const results = document.querySelector("#results");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const location = document.querySelector("#location").value;
+            const url =
+                "https://hotels4.p.rapidapi.com/locations/v1/search?q=" +
+                encodeURIComponent(location);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.setRequestHeader(
+                "X-RapidAPI-Key",
+                "44ec9328d1msh2b47bdcb419296ep137492jsn2c7101b3d8d1"
+            );
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    if (data.suggestions) {
+                        results.innerHTML = "Did you mean: ";
+                        data.suggestions.forEach(function (suggestion) {
+                            results.innerHTML += `<a href="#" class="suggestion">${suggestion.text}</a> `;
+                        });
+                        const suggestions = document.querySelectorAll(".suggestion");
+                        suggestions.forEach(function (suggestion) {
+                            suggestion.addEventListener("click", function (event) {
+                                event.preventDefault();
+                                document.querySelector("#location").value = suggestion.innerHTML;
+                                form.dispatchEvent(new Event("submit"));
+                            });
+                        });
+                    } else if (data.data.body.searchResults.results.length === 0) {
+                        results.innerHTML = "No results found for location: " + location;
+                    } else {
+                        displayResults(data.data.body.searchResults.results);
+                    }
+                } else if (xhr.readyState === 4) {
+                    results.innerHTML = "Error: " + xhr.status;
+                }
+            };
+            xhr.send();
+        });
+
+        function displayResults(results) {
+            let html = "";
+            results.forEach(function (result) {
+                html += `<div>${result.name}</div>`;
+            });
+            results.innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>
