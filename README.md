@@ -9,11 +9,11 @@
 |ORVALAMARVA            | 1202204249|
 
 #Endpoint dan Postman
-1. Endpoint
-
 2. Get List Hotel
+![image](https://github.com/Atayanajla/Hotel_EAI/assets/76781362/14163f4b-adc8-454e-b461-6ae16c9e8736)
 
 3. Tampilan Postman Get List Hotel
+![image](https://github.com/Atayanajla/Hotel_EAI/assets/76781362/9853fa70-7fa7-4689-917e-c65babd7b77f)
 
 4. Menampilkan Berdasarkan id
 
