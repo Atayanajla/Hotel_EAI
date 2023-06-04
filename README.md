@@ -7,4 +7,5 @@
 4. RIDA NAPISA (1202200037)
 5. ORVALAMARVA (1202204249)
 
-![Uploading image.png…]()
+![image](https://github.com/Atayanajla/Hotel_EAI/assets/76781362/86fcec60-add8-42bd-abba-7f61c01c974c)
+
