@@ -1,7 +1,7 @@
 ## Hotel ##
 
 |NAMA                   | NIM       |
-:-----------------------:-----------:
+|:---:|:---:|
 |Ataya Najla            | 1202200158|
 |KEYSIA ALODIA B        | 1202204053|
 |NABIL EGAN VALENTINO   | 1202204302|
