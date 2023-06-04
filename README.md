@@ -2,7 +2,7 @@
 
 |NAMA                   | NIM       |
 |:---:|:---:|
-|Ataya Najla            | 1202200158|
+|ATAYA NAJLA            | 1202200158|
 |KEYSIA ALODIA B        | 1202204053|
 |NABIL EGAN VALENTINO   | 1202204302|
 |RIDA NAPISA            | 1202200037|
