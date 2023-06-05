@@ -40,3 +40,71 @@ public function showHotel()
         }
 }
 
+## Get Hotel By Id ##
+#Example Request
+
+{
+        $getHotel_id = Hotel::find($id);
+        if ($getHotel_id) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Detail Hotel!',
+                'data' => $getHotel_id,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Hotel tidak ditemukan',
+                'data' => 'Data kosong'
+            ], 401);
+        }
+    }
+ 
+#Response
+
+{
+    "success": true,
+    "message": "Detail Hotel!",
+    "data": {
+        "id": 5,
+        "nama_hotel": "Ibis",
+        "title": "Ibis Trans studio bandung",
+        "rating": 5,
+        "fasilitas": "Kolam berenang",
+        "daerah": "Bandung",
+        "created_at": null,
+        "updated_at": null,
+        "harga": 500
+    }
+}
+
+## Get Hotel By location ##
+#Example Request
+
+public function cari_lokasi( Request $request )
+    {
+        $searchValue = $request->input('search');
+        $cari_lokasi_hotel = Hotel::where('daerah', 'like', '%' . $searchValue . '%')
+        ->latest()->get();
+        if ($cari_lokasi_hotel) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Detail Hotel!',
+                'data' => $cari_lokasi_hotel,
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Hotel tidak ditemukan',
+                'data' => 'Data kosong'
+            ], 401);
+        }
+    }
+    
+#Response
+
+{
+    "success": true,
+    "message": "Detail Hotel!",
+    "data": []
+}
