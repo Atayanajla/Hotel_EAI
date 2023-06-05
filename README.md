@@ -8,8 +8,8 @@
 |RIDA NAPISA            | 1202200037|
 |ORVALAMARVA            | 1202204249|
 
-#Endpoint dan Postman
-#Get list hotel
+Endpoint dan Postman
+Get list hotel
 Example Request
 
 public function showHotel()
