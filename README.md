@@ -9,6 +9,7 @@
 |ORVALAMARVA            | 1202204249|
 
 ##Get list hotel##
+
 #Example Request
 
 public function showHotel()
