@@ -9,28 +9,35 @@
 |ORVALAMARVA            | 1202204249|
 
 #Endpoint dan Postman
-2. Get List Hotel
-![image](https://github.com/Atayanajla/Hotel_EAI/assets/76781362/14163f4b-adc8-454e-b461-6ae16c9e8736)
+#Get list hotel
+Example Request
 
-3. Tampilan Postman Get List Hotel
-![image](https://github.com/Atayanajla/Hotel_EAI/assets/76781362/9853fa70-7fa7-4689-917e-c65babd7b77f)
+public function showHotel()
+    {
+        $hotel = Hotel::latest()->get();
+        return response()->json([
+            'success' => true,
+            'message' => 'List Semua hotel',
+            'data' => $hotel
+        ], 200);
+    }
+    
+Response
 
-4. Menampilkan Berdasarkan id
+{
+    "success": true,
+    "message": "List Semua hotel",
+    "data": [
+        {
+            "id": 4,
+            "nama_hotel": "swis",
+            "title": "swis hotel",
+            "rating": 3,
+            "fasilitas": "Tempat karoke",
+            "daerah": "Bandung",
+            "created_at": "2023-06-04T15:15:26.000000Z",
+            "updated_at": "2023-06-04T23:50:35.000000Z",
+            "harga": 200
+        }
+}
 
-5. Tampilan Postman Berdasarkan id
-
-6. Tambah Hotel
-
-7. Tampilan Postman Tambah Hotel
-
-8. Hapus data hotel
-
-9. Tampilan Postman Hapus data hotel
-
-10. Menampilkan Berdasarkan Daerah
-
-11. Tampilan Postman Berdasarkan Daerah
-
-12. Edit Data Hotel
-
-13. Tampilan Postman Edit Data Hotel
