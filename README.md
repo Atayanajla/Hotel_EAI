@@ -9,7 +9,10 @@
 |ORVALAMARVA            | 1202204249|
 
 ## Get list hotel ##
+
 #Example Request
+
+Route::get('/show/hotel', [HotelController::class, "showHotel"]);
 
 public function showHotel()
     {
@@ -42,6 +45,8 @@ public function showHotel()
 
 ## Get Hotel By Id ##
 #Example Request
+
+Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
 
 {
         $getHotel_id = Hotel::find($id);
@@ -80,6 +85,8 @@ public function showHotel()
 
 ## Get Hotel By location ##
 #Example Request
+
+Route::get('/show/lokasi/hotel', [HotelController::class, "cari_lokasi"]);
 
 public function cari_lokasi( Request $request )
     {
