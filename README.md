@@ -67,10 +67,6 @@ GET /show/hotel/detail/{id}
 GET /show/lokasi/hotel
 ```
 
-|Parameter    | Type    | Description
-|:---:|:---:|
-|search          | String  | Search digunakan untuk mencari berdasarkan lokasi hotel
-
 #### Response ####
 ```
 {
