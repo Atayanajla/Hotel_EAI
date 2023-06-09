@@ -9,11 +9,9 @@
 |ORVALAMARVA            | 1202204249|
 
 ### Get list hotel ###
-
-#Example Request
-
+'''
 Route::get('/show/hotel', [HotelController::class, "showHotel"]);
-
+'''
 public function showHotel()
     {
         $hotel = Hotel::latest()->get();
