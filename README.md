@@ -11,10 +11,10 @@
 ### Get list hotel ###
 
 ```
-Route::get('/show/hotel', [HotelController::class, "showHotel"]);
+GET /show/hotel
 ```
     
-###Response###
+#### Response ####
 ```
 {
     "success": true,
@@ -36,10 +36,10 @@ Route::get('/show/hotel', [HotelController::class, "showHotel"]);
 
 ### Get Hotel By Id ###
 ```
-Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
+GET /show/hotel/detail/{id}
 ```
  
-###Response###
+#### Response ####
 ```
 {
     "success": true,
@@ -59,13 +59,25 @@ Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
 ```
 ### Get Hotel By location ###
 ```
-Route::get('/show/lokasi/hotel', [HotelController::class, "cari_lokasi"]);
+GET /show/lokasi/hotel
 ```
-###Response###
+#### Response ####
 ```
 {
     "success": true,
     "message": "Detail Hotel!",
-    "data": []
+    "data": [
+        {
+            "id": 1,
+            "nama_hotel": "Aston Hotel",
+            "title": "Aston Jakarta",
+            "rating": 4,
+            "fasilitas": "Swimming Pool",
+            "daerah": "Jakarta",
+            "created_at": "2023-06-04T18:07:35.000000Z",
+            "updated_at": "2023-06-04T18:07:35.000000Z",
+            "harga": 650
+        }
+    ]
 }
 ```
