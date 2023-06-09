@@ -9,9 +9,11 @@
 |ORVALAMARVA            | 1202204249|
 
 ### Get list hotel ###
+
 '''
 Route::get('/show/hotel', [HotelController::class, "showHotel"]);
 '''
+
 public function showHotel()
     {
         $hotel = Hotel::latest()->get();
