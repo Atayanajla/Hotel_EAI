@@ -43,7 +43,7 @@ public function showHotel()
         }
 }
 
-## Get Hotel By Id ##
+### Get Hotel By Id ###
 #Example Request
 
 Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
@@ -83,7 +83,7 @@ Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
     }
 }
 
-## Get Hotel By location ##
+### Get Hotel By location ###
 #Example Request
 
 Route::get('/show/lokasi/hotel', [HotelController::class, "cari_lokasi"]);
