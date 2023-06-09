@@ -13,19 +13,9 @@
 ```
 Route::get('/show/hotel', [HotelController::class, "showHotel"]);
 ```
-
-public function showHotel()
-    {
-        $hotel = Hotel::latest()->get();
-        return response()->json([
-            'success' => true,
-            'message' => 'List Semua hotel',
-            'data' => $hotel
-        ], 200);
-    }
     
-#Response
-
+###Response###
+```
 {
     "success": true,
     "message": "List Semua hotel",
@@ -42,30 +32,15 @@ public function showHotel()
             "harga": 200
         }
 }
+```
 
 ### Get Hotel By Id ###
 ```
 Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
 ```
-{
-        $getHotel_id = Hotel::find($id);
-        if ($getHotel_id) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Detail Hotel!',
-                'data' => $getHotel_id,
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Hotel tidak ditemukan',
-                'data' => 'Data kosong'
-            ], 401);
-        }
-    }
  
-#Response
-
+###Response###
+```
 {
     "success": true,
     "message": "Detail Hotel!",
@@ -81,35 +56,16 @@ Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
         "harga": 500
     }
 }
-
+```
 ### Get Hotel By location ###
 ```
 Route::get('/show/lokasi/hotel', [HotelController::class, "cari_lokasi"]);
 ```
-public function cari_lokasi( Request $request )
-    {
-        $searchValue = $request->input('search');
-        $cari_lokasi_hotel = Hotel::where('daerah', 'like', '%' . $searchValue . '%')
-        ->latest()->get();
-        if ($cari_lokasi_hotel) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Detail Hotel!',
-                'data' => $cari_lokasi_hotel,
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Hotel tidak ditemukan',
-                'data' => 'Data kosong'
-            ], 401);
-        }
-    }
-    
-#Response
-
+###Response###
+```
 {
     "success": true,
     "message": "Detail Hotel!",
     "data": []
 }
+```
