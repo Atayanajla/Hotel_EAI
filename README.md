@@ -39,6 +39,11 @@ GET /show/hotel
 GET /show/hotel/detail/{id}
 ```
  
+|Parameter    | Type    | Description
+|:---:|:---:|
+|Id           | Integer  | Id digunakan untuk mencari spesifik hotel
+
+ 
 #### Response ####
 ```
 {
@@ -61,6 +66,11 @@ GET /show/hotel/detail/{id}
 ```
 GET /show/lokasi/hotel
 ```
+
+|Parameter    | Type    | Description
+|:---:|:---:|
+|search          | String  | Search digunakan untuk mencari berdasarkan lokasi hotel
+
 #### Response ####
 ```
 {
