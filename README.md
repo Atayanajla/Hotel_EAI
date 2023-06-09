@@ -44,10 +44,9 @@ public function showHotel()
 }
 
 ### Get Hotel By Id ###
-#Example Request
-
+```
 Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
-
+```
 {
         $getHotel_id = Hotel::find($id);
         if ($getHotel_id) {
@@ -84,10 +83,9 @@ Route::get('/show/hotel/detail/{id}', [HotelController::class, "showById"]);
 }
 
 ### Get Hotel By location ###
-#Example Request
-
+```
 Route::get('/show/lokasi/hotel', [HotelController::class, "cari_lokasi"]);
-
+```
 public function cari_lokasi( Request $request )
     {
         $searchValue = $request->input('search');
