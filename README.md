@@ -10,9 +10,9 @@
 
 ### Get list hotel ###
 
-'''
+```
 Route::get('/show/hotel', [HotelController::class, "showHotel"]);
-'''
+```
 
 public function showHotel()
     {
