@@ -40,7 +40,7 @@ GET /show/hotel/detail/{id}
 ```
  
 |Parameter    | Type    | Description
-|:---:|:---:|
+|:---:|:---:|:---:|
 |Id           | Integer  | Id digunakan untuk mencari spesifik hotel
 
  
